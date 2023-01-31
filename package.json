@@ -1,0 +1,24 @@
+{
+  "name": "start-prisma",
+  "version": "1.0.0",
+  "description": "api crud operations using prisma and mysql database with express server",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "prisma": "^4.9.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.9.0",
+    "@types/express": "^4.17.16",
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,7 @@
+npm i prisma typescript ts-node @types/node --save-dev
+npx prisma
+npx prisma init-->prisma+.env+gitignore
+npx prisma migrate dev --name init --->to create the tables from using schema =megration
+
+
+

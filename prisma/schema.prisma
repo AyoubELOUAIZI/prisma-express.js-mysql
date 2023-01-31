@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// generator client {
+//   provider = "prisma-client-js"
+// }
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
+// This is the generator block for the Prisma Client
+generator client {
+  // The provider is set to "prisma-client-js"
+  provider = "prisma-client-js"
+}
+
+// This is the datasource block for the database
+datasource db {
+  // The provider is set to "mysql"
+  provider = "mysql"
+  // The URL of the database connection is retrieved from the environment variable "DATABASE_URL"
+  url      = env("DATABASE_URL")
+}
+//--------------------------------------------------------------------------------------//
+//start creating schema
+// Define the User model with id, username, password, and cars properties
+model User {
+  id        Int      @id @default(autoincrement()) // id is set as the primary key and will automatically increment
+  username  String   @unique // username is set as unique
+  password  String 
+  cars      Car[] // An array of Car objects is associated with each User object
+}
+
+// Define the Car model with id, model, year, user, and userId properties
+model Car {
+  id        Int    @id @default(autoincrement()) // id is set as the primary key and will automatically increment
+  model     String
+  year      Int
+  user      User   @relation(fields: [userId], references: [id]) // The Car object is related to the User object by a userId property that references the id of the User
+  userId    Int
+}
